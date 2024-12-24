@@ -1,5 +1,5 @@
 import Expert from "./Expert";
-import HomePage from "./Homepage";
+import HomePage from "./HomePage";
 import Plans from "./Plans";
 
 function Home(){
