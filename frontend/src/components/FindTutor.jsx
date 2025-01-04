@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const FindTutor = () => {
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ const FindTutor = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('/api/tutor/getAllTutor');
+                const response = await fetch(`${API_URL}/tutor/getAllTutor`);
                 const data = await response.json();
                 setTutors(data);
                 setFilteredTutors(data); // Initialize filtered tutors with all tutors

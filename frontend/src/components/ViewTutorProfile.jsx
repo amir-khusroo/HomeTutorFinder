@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function ProfilePage() {
     const { tutorId } = useParams();
@@ -8,7 +9,7 @@ function ProfilePage() {
         // Fetch posts from the backend API
         const fetchData = async () => {
             try {
-                const response = await fetch(`/api/tutor/${tutorId}`);
+                const response = await fetch(`${API_URL}/api/tutor/${tutorId}`);
                 const data = await response.json();
                 setTutor(data);
             } catch (error) {

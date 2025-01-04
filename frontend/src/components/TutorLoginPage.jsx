@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios"
 import { toast } from 'react-toastify';
 import { useNavigate, Link } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL;
 
 
 const TutorLoginPage = () => {
@@ -18,7 +19,7 @@ const TutorLoginPage = () => {
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post("/api/tutor/login", formData).then((resp) => {
+        axios.post(`${API_URL}/api/tutor/login`, formData).then((resp) => {
             console.log(resp.data.message)
             toast.success(resp.data.message)
             navigate('/');

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from "axios"
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const CreatePostForm = () => {
   const navigate = useNavigate();
@@ -12,9 +13,9 @@ const CreatePostForm = () => {
     setNewPost((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleAddPost = (e) => {
+  const handleAddPost = (e) => { 
     e.preventDefault();
-    axios.post("/api/tutor/createPost", newPost).then((resp) => {
+    axios.post(`${API_URL}/api/tutor/createPost`, newPost).then((resp) => {
       //console.log(resp.data.message)
       toast.success(resp.data.message)
       navigate('/post');

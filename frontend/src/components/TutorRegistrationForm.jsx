@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios"
 import { toast } from 'react-toastify';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const TutorRegistrationForm = () => {
     const [avatarPreview, setAvatarPreview] = useState(null);
@@ -56,7 +57,7 @@ const TutorRegistrationForm = () => {
             data.append('photo', formData.photo);
         }
 
-        axios.post("/api/tutor/register", data).then((resp) => {
+        axios.post(`${API_URL}/api/tutor/register`, data).then((resp) => {
             console.log(resp.data.message)
             toast.success(resp.data.message)
             navigate('/login');

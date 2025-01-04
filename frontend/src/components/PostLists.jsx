@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const PostLists = () => {
     const navigate = useNavigate();
@@ -11,7 +13,7 @@ const PostLists = () => {
         // Fetch posts from the backend API
         const fetchData = async () => {
             try {
-                const response = await fetch('/api/tutor/getAllPost');
+                const response = await fetch(`${API_URL}/tutor/getAllPost`);
                 const data = await response.json();
                 setPosts(data);
 

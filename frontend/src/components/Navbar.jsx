@@ -3,12 +3,13 @@ import { Link, NavLink, useNavigate} from 'react-router-dom'
 import LoginLogoutButton from './LoginLogoutButton';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+const API_URL = import.meta.env.VITE_API_URL;
 
 const Navbar=()=> {
     const navigate = useNavigate();
     const handleLogout = async () => {
         try {
-          await axios.post('/api/tutor/logout').then((res) => {
+          await axios.post(`${API_URL}/api/tutor/logout`).then((res) => {
             toast.success(res.data.message)
             console.log(res.data.message);
           })
