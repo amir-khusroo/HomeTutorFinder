@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate} from 'react-router-dom'
 import LoginLogoutButton from './LoginLogoutButton';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import logo from './assets/logo.jpg';
 const API_URL = import.meta.env.VITE_API_URL;
 
 const Navbar=()=> {
@@ -28,7 +29,7 @@ const Navbar=()=> {
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="./src/assets/logo.jpg"
+                            src={logo}
                             className="mr-3 h-12"
                             alt="Logo"
                         />
