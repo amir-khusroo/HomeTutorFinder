@@ -5,11 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server:{
     proxy:{
-      '/api': {
-        target: 'https://hometutorfinder-backend.onrender.com',
-        changeOrigin: true,
-        secure: true,
-      },
+      '/api': 'http://localhost:3000'
     }
   },
   plugins: [react()],
