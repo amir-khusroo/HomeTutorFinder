@@ -19,7 +19,7 @@ const TutorLoginPage = () => {
     const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post(`${API_URL}/api/tutor/login`, formData).then((resp) => {
+        axios.post(`${API_URL}/tutor/login`, formData).then((resp) => {
             console.log(resp.data.message)
             toast.success(resp.data.message)
             navigate('/');

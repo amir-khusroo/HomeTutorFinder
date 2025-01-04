@@ -9,7 +9,7 @@ function ProfilePage() {
         // Fetch posts from the backend API
         const fetchData = async () => {
             try {
-                const response = await fetch(`${API_URL}/api/tutor/${tutorId}`);
+                const response = await fetch(`${API_URL}/tutor/${tutorId}`);
                 const data = await response.json();
                 setTutor(data);
             } catch (error) {

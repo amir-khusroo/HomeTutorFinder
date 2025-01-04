@@ -57,7 +57,7 @@ const TutorRegistrationForm = () => {
             data.append('photo', formData.photo);
         }
 
-        axios.post(`${API_URL}/api/tutor/register`, data).then((resp) => {
+        axios.post(`${API_URL}/tutor/register`, data).then((resp) => {
             console.log(resp.data.message)
             toast.success(resp.data.message)
             navigate('/login');

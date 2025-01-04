@@ -15,7 +15,7 @@ const CreatePostForm = () => {
 
   const handleAddPost = (e) => { 
     e.preventDefault();
-    axios.post(`${API_URL}/api/tutor/createPost`, newPost).then((resp) => {
+    axios.post(`${API_URL}/tutor/createPost`, newPost).then((resp) => {
       //console.log(resp.data.message)
       toast.success(resp.data.message)
       navigate('/post');
