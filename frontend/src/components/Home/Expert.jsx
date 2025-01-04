@@ -2,7 +2,7 @@ import React from 'react'
 import img1 from './images/img..jpg';
 export default function Expert() {
     return (
-        <div className='max-w-[1250px]  mx-auto md:grid grid-cols-2 '>
+        <div className=  'max-w-[1250px]  mx-auto md:grid grid-cols-2 '>
             <div className=' col-span-1 w-[80%]'>
                 <img src={img1} alt="" />
             </div>
