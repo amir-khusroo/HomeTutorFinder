@@ -3,7 +3,7 @@ import { Link, NavLink, useNavigate} from 'react-router-dom'
 import LoginLogoutButton from './LoginLogoutButton';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import logo from './assets/logo.jpg';
+import logo from '../assets/logo.jpg';
 const API_URL = import.meta.env.VITE_API_URL;
 
 const Navbar=()=> {
