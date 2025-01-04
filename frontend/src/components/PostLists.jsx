@@ -36,7 +36,7 @@ const PostLists = () => {
         await Promise.all(
             tutorIds.map(async (tutorId) => {
                 try {
-                    const response = await fetch(`/api/tutor/${tutorId}`);
+                    const response = await fetch(`${API_URL}/tutor/${tutorId}`);
                     const tutorData = await response.json();
                     tutors[tutorId] = tutorData;
                 } catch (error) {
